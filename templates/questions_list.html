@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>All Questions</h2>
+<a>Add New Question</a>
+<ul>
+    {% for question in questions %}
+        <li>
+            <strong>{{ question.id }}| {{ question.title }}</strong> 
+            | <a href="{% url 'question-detail' question.id %}">Details</a> | <a href="{% url 'edit-question' question.id %}">Edit</a> | <a href="{% url 'delete-question' question.id %}">Delete</a> |
+            <p>{{ question.description }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
