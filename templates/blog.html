@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+
+{% block title %}AidKo - Blog{% endblock %}
+
+{% block additional_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Blog Hero -->
+<section class="blog-hero">
+    <div class="container">
+        <div class="blog-hero-content">
+            <h1>Expat Life in Korea</h1>
+            <p class="hero-text">Stories, guides, and insights to help you navigate life in Korea</p>
+            <div class="blog-hero-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search articles...">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Categories -->
+<section class="blog-categories">
+    <div class="container">
+        <div class="categories-scrollbar">
+            <a href="/blog/category/living" class="category-pill {% if category == 'living' %}active{% endif %}">Living</a>
+            <a href="/blog/category/working" class="category-pill {% if category == 'working' %}active{% endif %}">Working</a>
+            <a href="/blog/category/culture" class="category-pill {% if category == 'culture' %}active{% endif %}">Culture</a>
+            <a href="/blog/category/language" class="category-pill {% if category == 'language' %}active{% endif %}">Language</a>
+            <a href="/blog/category/travel" class="category-pill {% if category == 'travel' %}active{% endif %}">Travel</a>
+            <a href="/blog/category/food" class="category-pill {% if category == 'food' %}active{% endif %}">Food</a>
+            <a href="/blog/category/education" class="category-pill {% if category == 'education' %}active{% endif %}">Education</a>
+            <a href="/blog/category/health" class="category-pill {% if category == 'health' %}active{% endif %}">Healthcare</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Post -->
+<section class="featured-post">
+    <div class="container">
+        <div class="featured-post-content">
+            <div class="featured-post-image">
+                <img src="{% static 'images/blog/featured-post.jpg' %}" alt="Mastering Korean Work Culture">
+            </div>
+            <div class="featured-post-details">
+                <div class="post-meta">
+                    <span class="featured-badge">Featured</span>
+                    <span class="category">Working</span>
+                    <span class="post-date">May 15, 2024</span>
+                </div>
+                <h2>Mastering Korean Work Culture: An Insider's Guide</h2>
+                <p>Navigate the nuanced world of Korean professional environments with confidence and cultural sensitivity. Learn about hierarchical relationships, communication styles, and social expectations in the Korean workplace.</p>
+                <div class="author-info">
+                    <img src="{% static 'images/avatars/sarah.jpg' %}" alt="Sarah Kim" class="author-avatar">
+                    <div>
+                        <span class="author-name">Sarah Kim</span>
+                        <span class="author-bio">HR Professional, 8+ years in Korea</span>
+                    </div>
+                </div>
+                <a href="/blog/korean-work-culture" class="btn btn-primary">Read Article</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Blog Posts -->
+<section class="recent-blog-posts">
+    <div class="container">
+        <h2>Latest Articles</h2>
+        <div class="blog-posts-grid">
+            <!-- Article 1 -->
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/language-learning.jpg' %}" alt="Korean Language Learning">
+                </div>
+                <div class="blog-post-content">
+                    <div class="post-meta">
+                        <span class="category">Language</span>
+                        <span class="post-date">June 3, 2024</span>
+                    </div>
+                    <h3><a href="/blog/korean-language-strategies">Korean Language Learning Strategies That Actually Work</a></h3>
+                    <p>Effective methods to accelerate your Korean language skills without getting overwhelmed or discouraged.</p>
+                    <div class="post-footer">
+                        <div class="author-mini">
+                            <img src="{% static 'images/avatars/david.jpg' %}" alt="Author">
+                            <span>David Park</span>
+                        </div>
+                        <span class="read-time"><i class="far fa-clock"></i> 4 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 2 -->
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/seoul-food.jpg' %}" alt="Seoul Food Scene">
+                </div>
+                <div class="blog-post-content">
+                    <div class="post-meta">
+                        <span class="category">Food</span>
+                        <span class="post-date">May 29, 2024</span>
+                    </div>
+                    <h3><a href="/blog/hidden-gems-seoul-food">Hidden Gems of Seoul's Food Scene</a></h3>
+                    <p>Explore beyond tourist favorites to discover authentic local culinary treasures throughout Seoul's diverse neighborhoods.</p>
+                    <div class="post-footer">
+                        <div class="author-mini">
+                            <img src="{% static 'images/avatars/minho.jpg' %}" alt="Author">
+                            <span>Min-ho Lee</span>
+                        </div>
+                        <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 3 -->
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/bureaucracy.jpg' %}" alt="Korean Bureaucracy">
+                </div>
+                <div class="blog-post-content">
+                    <div class="post-meta">
+                        <span class="category">Living</span>
+                        <span class="post-date">May 25, 2024</span>
+                    </div>
+                    <h3><a href="/blog/navigating-korean-bureaucracy">Navigating Korean Bureaucracy: A Comprehensive Guide</a></h3>
+                    <p>Essential tips for handling administrative processes from immigration to banking and healthcare with minimal stress.</p>
+                    <div class="post-footer">
+                        <div class="author-mini">
+                            <img src="{% static 'images/avatars/jennifer.jpg' %}" alt="Author">
+                            <span>Jennifer Wu</span>
+                        </div>
+                        <span class="read-time"><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 4 -->
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/apartments.jpg' %}" alt="Korean Apartments">
+                </div>
+                <div class="blog-post-content">
+                    <div class="post-meta">
+                        <span class="category">Housing</span>
+                        <span class="post-date">May 21, 2024</span>
+                    </div>
+                    <h3><a href="/blog/apartment-hunting-korea">Apartment Hunting in Korea: Understanding Key Money and Housing Types</a></h3>
+                    <p>A guide to different housing options, rental terms, and what to expect when searching for a home in Korea.</p>
+                    <div class="post-footer">
+                        <div class="author-mini">
+                            <img src="{% static 'images/avatars/sophia.jpg' %}" alt="Author">
+                            <span>Sophia Johnson</span>
+                        </div>
+                        <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 5 -->
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/healthcare.jpg' %}" alt="Healthcare in Korea">
+                </div>
+                <div class="blog-post-content">
+                    <div class="post-meta">
+                        <span class="category">Healthcare</span>
+                        <span class="post-date">May 18, 2024</span>
+                    </div>
+                    <h3><a href="/blog/healthcare-system-korea">Navigating the Korean Healthcare System as an Expat</a></h3>
+                    <p>Everything you need to know about health insurance, finding English-speaking doctors, and accessing medical care.</p>
+                    <div class="post-footer">
+                        <div class="author-mini">
+                            <img src="{% static 'images/avatars/dr-kim.jpg' %}" alt="Author">
+                            <span>Dr. James Kim</span>
+                        </div>
+                        <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 6 -->
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/korean-holidays.jpg' %}" alt="Korean Holidays">
+                </div>
+                <div class="blog-post-content">
+                    <div class="post-meta">
+                        <span class="category">Culture</span>
+                        <span class="post-date">May 15, 2024</span>
+                    </div>
+                    <h3><a href="/blog/korean-holidays-guide">Korean Holidays and Festivals: A Year-Round Guide</a></h3>
+                    <p>Learn about traditional Korean holidays, what to expect, and how to participate in local celebrations.</p>
+                    <div class="post-footer">
+                        <div class="author-mini">
+                            <img src="{% static 'images/avatars/eunji.jpg' %}" alt="Author">
+                            <span>Eunji Cho</span>
+                        </div>
+                        <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <a href="#" class="page-prev disabled"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" class="page-number active">1</a>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <span class="page-ellipsis">...</span>
+            <a href="#" class="page-number">12</a>
+            <a href="#" class="page-next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+    <div class="container">
+        <div class="newsletter-content">
+            <div class="newsletter-text">
+                <h2>Stay Updated with AidKo</h2>
+                <p>Get weekly articles, tips, and community highlights delivered to your inbox</p>
+            </div>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email address">
+                <button class="btn btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
