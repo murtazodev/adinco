@@ -1,27 +1,32 @@
-<nav class="navbar" style="display: flex; justify-content: center; padding: 20px 80px;">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1100px;">
-        
-        <!-- Left Side: Logo & Navigation Links -->
-        <div class="nav-left" style="display: flex; align-items: center; gap: 50px;">
-            <a href="/">AidKo</a>
-            <div class="nav-links" style="display: flex; gap: 15px;">
-                <a href="/">Home</a>
-                <a href="{% url 'questions-list' %}">Questions</a>
-                <!-- <a href="#">Community</a>
-                <a href="#">Blog</a> -->
-                <a href="{% url 'add-question' %}">Ask Question</a>
-                <a href="#">Login</a>
-                <a href="#">Logout</a>
-
-
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-left">
+            <a href="/" class="logo">AidKo</a>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search AidKo">
             </div>
         </div>
-
-        <!-- Right Side: Actions -->
-        <!-- <div class="nav-actions" style="display: flex; align-items: center; gap: 35px;">
-            <a href="#">Ask Question</a>
-            <button>Sign In</button>
-        </div> -->
-
+        <div class="nav-links">
+            <a href="/" {% if active_page == 'home' %}class="active"{% endif %}>
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="/questions" {% if active_page == 'questions' %}class="active"{% endif %}>
+                <i class="fas fa-question-circle"></i> Questions
+            </a>
+            <a href="/community" {% if active_page == 'community' %}class="active"{% endif %}>
+                <i class="fas fa-users"></i> Community
+            </a>
+            <a href="/blog" {% if active_page == 'blog' %}class="active"{% endif %}>
+                <i class="fas fa-newspaper"></i> Blog
+            </a>
+        </div>
+        <div class="nav-actions">
+            <a href="/ask_question" class="btn btn-primary"><i class="fas fa-plus"></i> Ask Question</a>
+            <div class="auth-buttons">
+                <a href="/login" class="btn btn-outline">Log In</a>
+                <a href="/signup" class="btn btn-secondary">Sign Up</a>
+            </div>
+        </div>
     </div>
 </nav>
