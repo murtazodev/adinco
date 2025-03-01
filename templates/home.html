@@ -1,5 +1,256 @@
-<!-- {% extends 'base.html' %} -->
+{% extends 'base.html' %}
 
+{% block title %}AidKo - Get Help Living in Korea{% endblock %}
 
-<h1>Welcome to AidKo</h1>
-<p>Ask your questions and get answers from the community.</p>
+{% block additional_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Get Answers About Life in Korea</h1>
+            <p class="hero-text">Join our community of expats to ask questions, share experiences, and navigate Korea together</p>
+            <div class="hero-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="What do you want to know about Korea?">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/korea-hero.jpg' %}" alt="Life in Korea">
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+    <div class="container">
+        <h2>Popular Topics</h2>
+        <div class="category-grid">
+            <a href="/category/visa" class="category-card">
+                <i class="fas fa-passport"></i>
+                <span>Visa & Immigration</span>
+                <span class="question-count">2,453 questions</span>
+            </a>
+            <a href="/category/housing" class="category-card">
+                <i class="fas fa-building"></i>
+                <span>Housing</span>
+                <span class="question-count">1,872 questions</span>
+            </a>
+            <a href="/category/language" class="category-card">
+                <i class="fas fa-language"></i>
+                <span>Korean Language</span>
+                <span class="question-count">3,217 questions</span>
+            </a>
+            <a href="/category/work" class="category-card">
+                <i class="fas fa-briefcase"></i>
+                <span>Work & Career</span>
+                <span class="question-count">2,156 questions</span>
+            </a>
+            <a href="/category/education" class="category-card">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education</span>
+                <span class="question-count">1,934 questions</span>
+            </a>
+            <a href="/category/health" class="category-card">
+                <i class="fas fa-heartbeat"></i>
+                <span>Healthcare</span>
+                <span class="question-count">1,523 questions</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Questions -->
+<section class="featured-questions">
+    <div class="container">
+        <div class="section-header">
+            <h2>Top Questions</h2>
+            <a href="/questions" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="questions-list">
+            <div class="question-item">
+                <div class="question-stats">
+                    <div class="stat">
+                        <span class="number">42</span>
+                        <span class="label">votes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">12</span>
+                        <span class="label">answers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">3.2k</span>
+                        <span class="label">views</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <h3><a href="/question/1">How do I apply for an Alien Registration Card (ARC) as a student?</a></h3>
+                    <p>I'm starting at Seoul National University next month and need to get my ARC. What documents do I need and what's the process like?</p>
+                    <div class="question-meta">
+                        <span class="tag">Documentation</span>
+                        <span class="tag">Student Visa</span>
+                        <div class="user-info">
+                            <img src="{% static 'images/avatars/user1.jpg' %}" alt="User">
+                            <span>Asked by <a href="/user/john">John Kim</a> • 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-item">
+                <div class="question-stats">
+                    <div class="stat">
+                        <span class="number">38</span>
+                        <span class="label">votes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">8</span>
+                        <span class="label">answers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">2.7k</span>
+                        <span class="label">views</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <h3><a href="/question/2">Which neighborhoods in Seoul are best for expat families?</a></h3>
+                    <p>Moving to Seoul with my spouse and two kids (ages 5 and 8). Looking for areas with international schools and family-friendly amenities.</p>
+                    <div class="question-meta">
+                        <span class="tag">Housing</span>
+                        <span class="tag">Family Life</span>
+                        <div class="user-info">
+                            <img src="{% static 'images/avatars/user2.jpg' %}" alt="User">
+                            <span>Asked by <a href="/user/emily">Emily Chen</a> • 1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-item">
+                <div class="question-stats">
+                    <div class="stat">
+                        <span class="number">29</span>
+                        <span class="label">votes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">15</span>
+                        <span class="label">answers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">4.1k</span>
+                        <span class="label">views</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <h3><a href="/question/3">What are the steps to open a bank account as a foreigner in Korea?</a></h3>
+                    <p>I'm having trouble opening a bank account because of language barriers. Which banks are most foreigner-friendly and what documents do I need?</p>
+                    <div class="question-meta">
+                        <span class="tag">Banking</span>
+                        <span class="tag">Financial</span>
+                        <div class="user-info">
+                            <img src="{% static 'images/avatars/user3.jpg' %}" alt="User">
+                            <span>Asked by <a href="/user/miguel">Miguel Santos</a> • 3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Stats -->
+<section class="community-stats">
+    <div class="container">
+        <h2>Join Our Growing Community</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Community Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-number">25,000+</div>
+                <div class="stat-label">Questions Answered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number">2,500+</div>
+                <div class="stat-label">Expert Contributors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <div class="stat-number">85+</div>
+                <div class="stat-label">Countries Represented</div>
+            </div>
+        </div>
+        <div class="cta-container">
+            <a href="/signup" class="btn btn-large btn-primary">Join AidKo Today</a>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Blog Posts -->
+<section class="recent-blog-posts">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest from Our Blog</h2>
+            <a href="/blog" class="view-all">View All Articles <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="blog-posts-grid">
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/korean-workplace.jpg' %}" alt="Korean Workplace Culture">
+                </div>
+                <div class="blog-post-content">
+                    <h3><a href="/blog/korean-workplace-culture">Mastering Korean Work Culture: An Insider's Guide</a></h3>
+                    <p>Navigate the nuanced world of Korean professional environments with confidence and cultural sensitivity.</p>
+                    <div class="post-meta">
+                        <span class="category">Work</span>
+                        <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/language-learning.jpg' %}" alt="Language Learning">
+                </div>
+                <div class="blog-post-content">
+                    <h3><a href="/blog/language-learning">Korean Language Learning Strategies That Actually Work</a></h3>
+                    <p>Effective methods to accelerate your Korean language skills without getting overwhelmed.</p>
+                    <div class="post-meta">
+                        <span class="category">Language</span>
+                        <span class="read-time"><i class="far fa-clock"></i> 4 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/seoul-food.jpg' %}" alt="Seoul Food">
+                </div>
+                <div class="blog-post-content">
+                    <h3><a href="/blog/seoul-food-guide">Hidden Gems of Seoul's Food Scene</a></h3>
+                    <p>Explore beyond tourist favorites to discover authentic local culinary treasures throughout Seoul.</p>
+                    <div class="post-meta">
+                        <span class="category">Food</span>
+                        <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
